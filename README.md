@@ -6,3 +6,6 @@
 ### Mike Bocon
 ### Leah Mattern
 ### Swaroop Uprety
+
+## ERD 
+[DrawSQL ERD Diagram](https://drawsql.app/swaroop/diagrams/notp)
