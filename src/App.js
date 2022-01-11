@@ -5,6 +5,7 @@ import Broken from './pages/404/404';
 import Landing from './pages/landing/Landing';
 import Home from './pages/home/Home';
 import NewUser from './pages/new-user/NewUser';
+import ReturningUser from './pages/returning-user/ReturningUser'
 import UserAccount from './pages/user-account/UserAccount';
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path="/new-user">
           component={NewUser}
+        </Route>
+        <Route path="/returning-user">
+          component={ReturningUser}
         </Route>
         <Route path="/account">
           component={UserAccount}
