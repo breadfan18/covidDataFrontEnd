@@ -4,8 +4,9 @@ import { Route, Switch } from 'react-router-dom';
 import Broken from './pages/404/404';
 import Landing from './pages/landing/Landing';
 import Home from './pages/home/Home';
+import About from './pages/about/About';
 import NewUser from './pages/new-user/NewUser';
-import ReturningUser from './pages/returning-user/ReturningUser'
+import ReturningUser from './pages/returning-user/ReturningUser';
 import UserAccount from './pages/user-account/UserAccount';
 
 function App() {
@@ -45,10 +46,13 @@ function App() {
         <Route path="/home">
           <Home data={data} />
         </Route>
-        <Route path="/new-user">
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/signup">
           <NewUser />
         </Route>
-        <Route path="/returning-user">
+        <Route path="/login">
           <ReturningUser />
         </Route>
         <Route path="/account">
