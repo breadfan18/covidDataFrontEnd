@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
+// Custom Component Imports
+import TitleAnnouncer from './components/titleAnnouncer/TitleAnnouncer';
+
 // Page Imports
 import Broken from './pages/404/404';
 import Landing from './pages/landing/Landing';
@@ -40,6 +43,7 @@ function App() {
   const loaded = () => {
     return (
       <div>
+        <TitleAnnouncer />
         <Helmet>
           <title>Covid NoTp Tracker</title>
         </Helmet>
