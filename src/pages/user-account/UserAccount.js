@@ -1,6 +1,10 @@
+import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
+
 export default function UserAccount(props) {
     return (
         <>
+            <Header />
             <h1>UserAccount Page...</h1>
             <div className="userAccContainer">
                 <div className="leftCont">
@@ -28,6 +32,7 @@ export default function UserAccount(props) {
                     <div>Display User Covid Saved Data list things stuff etc..</div>
                 </div>
             </div>
+            {/* <Footer /> */}
         </>
     )
 }
