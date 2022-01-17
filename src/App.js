@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+
 // Page Imports
 import Broken from './pages/404/404';
 import Landing from './pages/landing/Landing';
@@ -8,6 +10,7 @@ import About from './pages/about/About';
 import NewUser from './pages/new-user/NewUser';
 import ReturningUser from './pages/returning-user/ReturningUser';
 import UserAccount from './pages/user-account/UserAccount';
+
 
 function App() {
   const [data, setData] = useState([])
@@ -36,29 +39,34 @@ function App() {
 
   const loaded = () => {
     return (
-      <Switch>
-        <Route exact path="/">
-          <Landing />
-        </Route>
-        <Route path="/404">
-          <Broken />
-        </Route>
-        <Route path="/home">
-          <Home data={data} />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/signup">
-          <NewUser />
-        </Route>
-        <Route path="/login">
-          <ReturningUser />
-        </Route>
-        <Route path="/account">
-          <UserAccount />
-        </Route>
-      </Switch>
+      <div>
+        <Helmet>
+          <title>Covid NoTp Tracker</title>
+        </Helmet>
+        <Switch>
+          <Route exact path="/">
+            <Landing />
+          </Route>
+          <Route path="/404">
+            <Broken />
+          </Route>
+          <Route path="/home">
+            <Home data={data} />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/signup">
+            <NewUser />
+          </Route>
+          <Route path="/login">
+            <ReturningUser />
+          </Route>
+          <Route path="/account">
+            <UserAccount />
+          </Route>
+        </Switch>
+      </div>
     )
   }
 
