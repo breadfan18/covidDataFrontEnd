@@ -10,7 +10,7 @@ export default function TitleAnnouncer(props){
   
     useEffect(() => {
       if (titleRef.current) titleRef.current.focus()
-    }, [pathname])
+    }, [pathname, titleRef])
 
     return(
         <>

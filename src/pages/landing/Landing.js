@@ -20,7 +20,7 @@ export default function Landing(props){
             <div id="link-container">
                 <Link to="/">Guest</Link>
                 <Link to="/account">Returning User</Link>
-                <Link to="/sign-in">New User</Link>
+                <Link to="/signup">New User</Link>
             </div>
             <Footer />
         </div>

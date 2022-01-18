@@ -19,13 +19,12 @@ function App() {
   const [data, setData] = useState([])
 
   // http://dev.socrata.com/foundry/data.cdc.gov/9mfq-cb36 (CDC api docs)
-  const API_URL = 'https://data.cdc.gov/resource/9mfq-cb36.json?submission_date=2022-01-11T00:00:00.000'
+  const API_URL = 'https://data.cdc.gov/resource/9mfq-cb36.json'
 
   const getData = async () => {
     const response = await fetch(API_URL);
-    console.log(response, 'is response')
     const data = await response.json();
-    console.log(data)
+    console.log(data, 'is data')
     setData(data);
   }
 
