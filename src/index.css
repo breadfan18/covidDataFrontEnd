@@ -29,3 +29,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.userAccContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.userAccContainer * {
+  margin: 10px;
+}
+
+#userDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  background-color: rgb(250, 229, 215);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 4px solid black;
+}
+
+.eachUserDetail {
+  grid-column: span 3;
+  font-weight: bold;
+}
+
+.rightCont {
+  background-color: rgb(250, 229, 215);
+  border: 4px solid black;
+  border-radius: 10px;
+}
