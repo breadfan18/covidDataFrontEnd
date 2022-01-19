@@ -8,7 +8,7 @@ export default function Header(props) {
     return (
         <header>
             <img src={logo} alt="NoTP logo" id="notp-logo" />
-            <Nav />
+            <Nav user={props.user}/>
         </header>
     )
 }

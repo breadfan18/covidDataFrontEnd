@@ -8,14 +8,14 @@ const config = {
     storageBucket: "notp-8e252.appspot.com",
     messagingSenderId: "488224415964",
     appId: "1:488224415964:web:dbe4d3299fd33645d81419",
-    measurementId: "G-TZYYRF9FFY"
+    // measurementId: "G-TZYYRF9FFY"
   };
  
 firebase.initializeApp(config);
 
 // setup a provider
 const googleProvider = new firebase.auth.GoogleAuthProvider();
-const githubProvider = new firebase.auth.GithubAuthProvider();
+// const githubProvider = new firebase.auth.GithubAuthProvider();
 
 // Reference to firebase auth
 const auth = firebase.auth();
@@ -29,6 +29,7 @@ function logout() {
     auth.signOut();
 }
 
+// Named exports 
 export {
     login,
     logout, 

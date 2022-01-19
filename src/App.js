@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { auth } from './services/firebase';
 
 // Custom Component Imports
 import TitleAnnouncer from './components/titleAnnouncer/TitleAnnouncer';
@@ -13,10 +14,12 @@ import About from './pages/about/About';
 import NewUser from './pages/new-user/NewUser';
 import ReturningUser from './pages/returning-user/ReturningUser';
 import UserAccount from './pages/user-account/UserAccount';
+import Header from './components/header/Header';
 
 
 function App() {
   const [data, setData] = useState([])
+  const [ user, setUser ] = useState(null);
 
   // http://dev.socrata.com/foundry/data.cdc.gov/9mfq-cb36 (CDC api docs)
   const API_URL = 'https://data.cdc.gov/resource/9mfq-cb36.json'
@@ -30,6 +33,7 @@ function App() {
 
   useEffect(() => {
     getData();
+    auth.onAuthStateChanged(user => setUser(user))
   }, []);
 
 
@@ -46,6 +50,7 @@ function App() {
         <Helmet>
           <title>Covid NoTp Tracker</title>
         </Helmet>
+        <Header user={user}/>
         <Switch>
           <Route exact path="/">
             <Landing />
@@ -66,7 +71,7 @@ function App() {
             <ReturningUser />
           </Route>
           <Route path="/account">
-            <UserAccount />
+            <UserAccount googleuser={user}/>
           </Route>
         </Switch>
       </div>
